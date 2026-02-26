@@ -13,28 +13,50 @@
     </main>
 
     <script>
-      const person = {
-        name: "Lebron James",
-        cpr: "2808961234",
-        email: "lebronja@gmail.com",
-        city: "Los Angeles",
-        team: "LA LAKERS",
-      };
+      const personer = [
+        {
+          name: "Lebron James",
+          cpr: "2808961234",
+          email: "lebronja@gmail.com",
+          city: "Los Angeles",
+          team: "LA LAKERS",
+          children: [],
+        },
 
+        {
+          name: "Stephen Curry",
+          cpr: "2808961234",
+          email: "lebronja@gmail.com",
+          city: "Bay Area",
+          team: "GOLDEN STATE",
+          children: [1],
+        },
+        {
+          name: "Michael Jordan",
+          cpr: "2808961234",
+          email: "lebronja@gmail.com",
+          city: "Chicago",
+          team: "CHICAGO BULLS",
+          children: [2],
+        },
+      ];
       const personliste = document.querySelector("#personliste");
 
-      function showPerson() {
-        console.log(person);
-        personliste.innerHTML = `
+      function showPersoner() {
+        personer.forEach((person) => {
+          personliste.innerHTML += `
         <article class="personkort">
             <h2>${person.name}</h2>
-            <p>CPR: ${person.cpr} ${person.email}</p>
+            <p>CPR: ${person.cpr}</p>
             <p>${person.email}</p>
+            <p>${person.team}</p>
+            <p>Children:${person.children.join(",")}</p>
             </article>
             `;
+        });
       }
 
-      showPerson();
+      showPersoner();
     </script>
   </body>
 </html>
