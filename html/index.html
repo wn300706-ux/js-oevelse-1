@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>objekt</title>
+  </head>
+
+  <body>
+    <h1>Personer</h1>
+    <main>
+      <section id="personliste"></section>
+    </main>
+
+    <script>
+      const person = {
+        name: "Lebron James",
+        cpr: "2808961234",
+        email: "lebronja@gmail.com",
+        city: "Los Angeles",
+        team: "LA LAKERS",
+      };
+
+      const personliste = document.querySelector("#personliste");
+
+      function showPerson() {
+        console.log(person);
+        personliste.innerHTML = `
+        <article class="personkort">
+            <h2>${person.name}</h2>
+            <p>CPR: ${person.cpr} ${person.email}</p>
+            <p>${person.email}</p>
+            </article>
+            `;
+      }
+
+      showPerson();
+    </script>
+  </body>
+</html>
